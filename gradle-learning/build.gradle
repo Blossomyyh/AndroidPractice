@@ -1,2 +1,5 @@
 task groovy << {}
-println "Hello World! -- cc Groovy" 
+println "Hello World! -- cc Groovy"
+
+def name = "blossom"
+println "${name}\n" 
