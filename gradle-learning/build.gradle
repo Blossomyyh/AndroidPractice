@@ -1,5 +1,26 @@
-task groovy << {}
-println "Hello World! -- cc Groovy"
+//task groovy << {}
+//println "Hello World! -- cc Groovy"
 
-def name = "blossom"
-println "${name}\n" 
+//def name = "blossom"
+//println "${name}\n"
+project.task("myTask")
+myTask.description = "This now shows the description of the task"
+myTask.group = "myTaks----Group"
+myTask.doLast{println "Do this last"}
+myTask.doFirst{println "Do this the first"}
+
+
+
+task putOnSocks {
+  doLast{
+    println "Putting on ur socks"
+  }
+	
+} 
+
+task putOnShoes{
+  dependsOn "putOnSocks"
+  doLast{
+    println "Putting on ur shoes"
+  }
+}
